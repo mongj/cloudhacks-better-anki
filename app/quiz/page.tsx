@@ -1,5 +1,5 @@
-export default function QuizPage () {
-    return <main>
-        quizpage
-    </main>
+export default function Page() {
+  return (
+    <div className="flex min-h-screen flex-col items-center">quizpage</div>
+  );
 }

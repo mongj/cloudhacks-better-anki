@@ -8,7 +8,7 @@ let iconStyle = "h-8"
 
 export default function Navbar() {
     return <footer className="flex flex-row justify-evenly items-center  h-16
-    shadow shadow-slate-700">
+    shadow shadow-slate-700 position:fixed bottom-0">
         <Link href="/quiz">
             <Image alt="nav-item quiz" src={quizIcon} className={iconStyle} />
         </Link>

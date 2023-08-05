@@ -1,3 +1,3 @@
-export default function Home() {
-  return <div className="flex min-h-screen flex-col items-center">Quiz</div>;
+export default function Page() {
+  return <main>quizpage</main>;
 }

@@ -17,10 +17,10 @@ export default function Page() {
       <section className="w-full flex flex-col justify-start p-4 gap-y-4">
         <div className="flex flex-row justify-between">
           <span className="font-semibold text-lg ml-2">Quizzes</span>
-          <div className="flex flex-row justify-center items-center">
+          <button className="flex flex-row justify-center items-center">
             <span className="text-stone-500">familiarity</span>
             <Image className="h-6 w-6" src={expandIcon} alt="expand" />
-          </div>
+          </button>
         </div>
         <ListItem text="中学华文" time="2days ago" icon="bg-amber-200" />
       </section>

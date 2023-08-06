@@ -6,8 +6,8 @@ import { ChevronDown } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="flex flex-col grow items-center p-8">
-      <div className="h-40 w-full bg-cyan-600 text-white flex flex-col justify-center items-center rounded-3xl">
+    <main className="flex flex-col grow items-center p-8 w-full">
+      <div className="h-40 w-full bg-indigo-500 text-white flex flex-col justify-center items-center rounded-3xl">
         <h2 className="text-xl">Streak &#128293;</h2>
         <div>
           <span className="text-6xl font-bold">69</span>
@@ -30,7 +30,7 @@ export default function Home() {
         />
         <ListItem href="/" text="JLPT N1" time="1d ago" icon="bg-red-400" />
         <div className="flex justify-center">
-          <button className="p-2 border border-neutral-300 w-1/3 rounded-xl mt-2 text-neutral-700">
+          <button className="px-6 py-4 border border-neutral-300 rounded-xl mt-2 text-white bg-indigo-500 shadow-sm">
             Add Deck +
           </button>
         </div>

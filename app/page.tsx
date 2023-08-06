@@ -16,7 +16,7 @@ export default function Home() {
       </div>
       <section className="w-full flex flex-col justify-start p-4 gap-y-4">
         <div className="flex flex-row justify-between">
-          <span className="font-semibold text-lg ml-2">Quizzes</span>
+          <span className="font-semibold text-lg ml-2">Decks</span>
           <button className="flex flex-row justify-center items-center">
             <span className="text-stone-500">last reviewed</span>
             <ChevronDown className="w-6 h-6" />

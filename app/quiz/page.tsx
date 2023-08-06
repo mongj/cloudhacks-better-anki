@@ -22,7 +22,7 @@ export default function Page() {
           </button>
         </div>
         <ListItem
-          href="/quiz/01"
+          href="/quiz/0"
           text="中学华文"
           time="2 days ago"
           icon="bg-amber-200"

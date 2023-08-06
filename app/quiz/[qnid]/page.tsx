@@ -40,7 +40,7 @@ export default function QuizPage({ params }: { params: { qnid: string } }) {
             href={
               Number(params.qnid) < jsonData.length - 1
                 ? `/quiz/${Number(params.qnid) + 1}`
-                : `/`
+                : `/completed`
             }
             className="px-6 py-4 bg-violet-500 rounded-xl text-xl text-white"
           >

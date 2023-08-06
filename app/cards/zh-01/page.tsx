@@ -2,8 +2,9 @@
 
 import { ArrowLeft } from "lucide-react";
 import { useState } from "react";
-
+import { useRouter } from "next/navigation";
 export default function Page() {
+  const router = useRouter();
   function handleRevealClick() {
     document.querySelector(".card-back")?.classList.toggle("invisible");
     document.querySelector(".flip-button")?.classList.toggle("invisible");
@@ -11,6 +12,10 @@ export default function Page() {
   }
 
   function handleRateClick() {
+    if (deckIndex === words.length - 1) {
+      router.push("/");
+      return;
+    }
     setDeckIndex(deckIndex + 1);
     document.querySelector(".card-back")?.classList.toggle("invisible");
     document.querySelector(".flip-button")?.classList.toggle("invisible");

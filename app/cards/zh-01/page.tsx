@@ -1,11 +1,35 @@
 "use client";
 
 import { ArrowLeft } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+function SkeletonStack() {
+  const [showSkeleton, setShowSkeleton] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowSkeleton(false);
+    }, 2000);
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, []);
+
+  if (showSkeleton) {
+    return (
+      <div className="skeleton flex flex-col gap-2 absolute top-0 left-0 w-full">
+        <div className="animate-pulse h-5 bg-neutral-300 rounded-sm"></div>
+        <div className="animate-pulse h-5 bg-neutral-300 rounded-sm "></div>
+      </div>
+    );
+  } else {
+    return null;
+  }
+}
 
 export default function Page() {
   function handleRevealClick() {
-    document.querySelector(".card-back")?.classList.toggle("invisible");
+    document.querySelector(".flip-button")?.classList.toggle("visible");
     document.querySelector(".flip-button")?.classList.toggle("invisible");
     document.querySelector(".rate-button")?.classList.toggle("invisible");
   }
@@ -89,9 +113,12 @@ export default function Page() {
       return (
         <div>
           <p className="mb-1 text-neutral-500">Example:</p>
-          <div className="animate-pulse h-4"></div>
-          <div className="animate-pulse h-4"></div>
-          <span>{words[deckIndex]["sentence"]}</span>
+          <div className="relative">
+            <SkeletonStack />
+            <span className="generated-sentence absolute top-0 left-0 invisible">
+              {words[deckIndex]["sentence"]}
+            </span>
+          </div>
         </div>
       );
     }

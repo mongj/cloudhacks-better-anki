@@ -1,10 +1,106 @@
 "use client";
 
 import { ArrowLeft } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+
+const words = [
+  {
+    "word-zh": "阅读",
+    "word-en": "read",
+    pronunciation: "yuè dú",
+  },
+  {
+    "word-zh": "宇宙",
+    "word-en": "universe",
+    pronunciation: "yŭ zhòu",
+  },
+  {
+    "word-zh": "创意",
+    "word-en": "creativity",
+    pronunciation: "chuàng yì",
+  },
+  {
+    "word-zh": "美味",
+    "word-en": "delicious",
+    pronunciation: "měi wèi",
+  },
+  {
+    "word-zh": "探索",
+    "word-en": "explore",
+    pronunciation: "tàn suǒ",
+  },
+  {
+    "word-zh": "牛逼",
+    "word-en": "impressive",
+    pronunciation: "niú bī",
+  },
+  {
+    "word-zh": "面馆",
+    "word-en": "noodle shop",
+    pronunciation: "miàn guǎn",
+  },
+  {
+    "word-zh": "证据",
+    "word-en": "evidence",
+    pronunciation: "zhèng jù",
+  },
+  {
+    "word-zh": "世界",
+    "word-en": "world",
+    pronunciation: "shì jiè",
+  },
+  {
+    "word-zh": "主厨",
+    "word-en": "head chef",
+    pronunciation: "zhǔ chú",
+  },
+  {
+    "word-zh": "秘方",
+    "word-en": "secret recipe",
+    pronunciation: "mì fāng",
+    sentence: "面馆的主厨是一个老奶奶，有人问她煮面的秘方",
+  },
+  {
+    "word-zh": "神秘",
+    "word-en": "mysterious",
+    pronunciation: "shén mì",
+    sentence: "他喜欢阅读关于宇宙的书籍，以此来探索那个神秘的世界",
+  },
+];
+
+function SkeletonStack({ deckIndex }: any) {
+  const [showSkeleton, setShowSkeleton] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowSkeleton(false);
+    }, Math.floor(2000 + Math.random() * 4000));
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, []);
+
+  if (showSkeleton) {
+    return (
+      <div className="skeleton flex flex-col gap-2 absolute top-0 left-0 w-full">
+        <div className="animate-pulse h-5 bg-neutral-300 rounded-sm"></div>
+        <div className="animate-pulse h-5 bg-neutral-300 rounded-sm "></div>
+      </div>
+    );
+  } else {
+    return (
+      <span className="generated-sentence absolute top-0 left-0">
+        {words[deckIndex]["sentence"]}
+      </span>
+    );
+  }
+}
+
 export default function Page() {
   const router = useRouter();
+  const [deckIndex, setDeckIndex] = useState(0);
+
   function handleRevealClick() {
     document.querySelector(".card-back")?.classList.toggle("invisible");
     document.querySelector(".flip-button")?.classList.toggle("invisible");
@@ -22,81 +118,14 @@ export default function Page() {
     document.querySelector(".rate-button")?.classList.toggle("invisible");
   }
 
-  const [deckIndex, setDeckIndex] = useState(0);
-
-  const words = [
-    {
-      "word-zh": "阅读",
-      "word-en": "read",
-      pronunciation: "yuè dú",
-    },
-    {
-      "word-zh": "宇宙",
-      "word-en": "universe",
-      pronunciation: "yŭ zhòu",
-    },
-    {
-      "word-zh": "创意",
-      "word-en": "creativity",
-      pronunciation: "chuàng yì",
-    },
-    {
-      "word-zh": "美味",
-      "word-en": "delicious",
-      pronunciation: "měi wèi",
-    },
-    {
-      "word-zh": "探索",
-      "word-en": "explore",
-      pronunciation: "tàn suǒ",
-    },
-    {
-      "word-zh": "牛逼",
-      "word-en": "impressive",
-      pronunciation: "niú bī",
-    },
-    {
-      "word-zh": "面馆",
-      "word-en": "noodle shop",
-      pronunciation: "miàn guǎn",
-    },
-    {
-      "word-zh": "证据",
-      "word-en": "evidence",
-      pronunciation: "zhèng jù",
-    },
-    {
-      "word-zh": "世界",
-      "word-en": "world",
-      pronunciation: "shì jiè",
-    },
-    {
-      "word-zh": "主厨",
-      "word-en": "head chef",
-      pronunciation: "zhǔ chú",
-    },
-    {
-      "word-zh": "秘方",
-      "word-en": "secret recipe",
-      pronunciation: "mì fāng",
-      sentence: "面馆的主厨是一个老奶奶，有人问她煮面的秘方",
-    },
-    {
-      "word-zh": "神秘",
-      "word-en": "mysterious",
-      pronunciation: "shén mì",
-      sentence: "他喜欢阅读关于宇宙的书籍，以此来探索那个神秘的世界",
-    },
-  ];
-
   function Sentence() {
     if (words[deckIndex].hasOwnProperty("sentence")) {
       return (
         <div>
           <p className="mb-1 text-neutral-500">Example:</p>
-          <div className="animate-pulse h-4"></div>
-          <div className="animate-pulse h-4"></div>
-          <span>{words[deckIndex]["sentence"]}</span>
+          <div className="relative">
+            <SkeletonStack deckIndex={deckIndex} />
+          </div>
         </div>
       );
     }

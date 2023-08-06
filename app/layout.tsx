@@ -18,12 +18,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`flex flex-col justify-between h-screen ${inter.className}`}>{children}
-
+      <body
+        className={`flex flex-col justify-between h-screen ${inter.className}`}
+      >
+        <main className="flex-grow">
+          {children}
+        </main>
         <Navbar />
       </body>
     </html>
   );
 }
-
-

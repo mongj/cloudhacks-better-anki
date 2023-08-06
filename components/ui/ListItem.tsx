@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ListItem(props: { text: string, time: string, icon: string }) {
-    return <Link href="/quiz/0" >
+export default function ListItem(props: { text: string, time: string, icon: string, href:string }) {
+    return <Link href={props.href} >
         <div className="flex-row flex justify-between px-4 py-4 rounded-md shadow-md">
             <span>
                 {props.text}

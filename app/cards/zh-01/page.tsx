@@ -2,6 +2,7 @@
 
 import { ArrowLeft } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 const words = [
   {
@@ -97,6 +98,7 @@ function SkeletonStack({ deckIndex }: any) {
 }
 
 export default function Page() {
+  const router = useRouter();
   const [deckIndex, setDeckIndex] = useState(0);
 
   function handleRevealClick() {
@@ -106,6 +108,10 @@ export default function Page() {
   }
 
   function handleRateClick() {
+    if (deckIndex === words.length - 1) {
+      router.push("/completed");
+      return;
+    }
     setDeckIndex(deckIndex + 1);
     document.querySelector(".card-back")?.classList.toggle("invisible");
     document.querySelector(".flip-button")?.classList.toggle("invisible");

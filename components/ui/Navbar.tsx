@@ -8,19 +8,28 @@ let iconStyle = "h-8";
 
 export default function Navbar() {
   return (
-    <footer className="flex flex-row justify-evenly items-center h-16 bottom-0 w-screen">
+    <footer className="flex flex-row justify-evenly items-center h-20 bottom-0 w-screen border-t-2 border-neutral-200 rounded-t-3xl overflow-hidden">
       <Link href="/quiz">
-        <Image alt="nav-item quiz" src={quizIcon} className={iconStyle} />
+        <div className="flex flex-col">
+          <Image alt="nav-item quiz" src={quizIcon} className={iconStyle} />
+          <span className="text-center text-neutral-600">Quiz</span>
+        </div>
       </Link>
       <Link href="/">
-        <Image alt="nav-item quiz" src={cardsIcon} className={iconStyle} />
+        <div className="flex flex-col">
+          <Image alt="nav-item cards" src={cardsIcon} className={iconStyle} />
+          <span className="text-center text-neutral-600">Card</span>
+        </div>
       </Link>
       <div>
-        <Image
-          alt="nav-item settings"
-          src={settingsIcon}
-          className={iconStyle}
-        />
+        <div className="flex flex-col">
+          <Image
+            alt="nav-item settings"
+            src={settingsIcon}
+            className={iconStyle}
+          />
+          <span className="text-center text-neutral-600">Setting</span>
+        </div>
       </div>
     </footer>
   );

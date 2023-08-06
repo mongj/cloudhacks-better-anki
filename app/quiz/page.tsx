@@ -5,17 +5,17 @@ import expandIcon from "../../public/svg/expand_more_FILL0_wght400_GRAD0_opsz48 
 
 export default function Page() {
   return (
-    <main className="flex flex-col items-center">
-      <div className="h-40 w-full bg-violet-500 text-white flex flex-col justify-center items-center rounded-b-3xl">
+    <main className="flex flex-col items-center p-8">
+      <div className="h-40 w-full bg-violet-500 text-white flex flex-col justify-center items-center rounded-3xl">
         <h2 className="text-xl">Streak &#128293;</h2>
         <div>
           <span className="text-6xl font-bold">420</span>
           <span>days</span>
         </div>
       </div>
-      <section className="w-full flex flex-col justify-start p-4 gap-y-4">
+      <section className="w-full flex flex-col justify-start mt-8 gap-y-4">
         <div className="flex flex-row justify-between">
-          <span className="font-semibold text-lg ml-2">Quizzes</span>
+          <span className="font-semibold text-2xl ml-2">Quizzes</span>
           <button className="flex flex-row justify-center items-center">
             <span className="text-stone-500">familiarity</span>
             <Image className="h-6 w-6" src={expandIcon} alt="expand" />
@@ -24,9 +24,10 @@ export default function Page() {
         <ListItem
           href="/quiz/0"
           text="中学华文"
-          time="2 days ago"
-          icon="bg-amber-200"
+          time="2d ago"
+          icon="bg-amber-400"
         />
+        <ListItem href="/" text="JLPT N1" time="5d ago" icon="bg-red-400" />
       </section>
     </main>
   );

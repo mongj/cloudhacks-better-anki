@@ -11,12 +11,10 @@ export default function CompletedPage() {
         </p>
         <p className="text-3xl font-bold text-center">{"中学华文"}</p>
       </div>
-
       <Image src={highFive} alt="background image" />
-
       <Link href="/">
         <button className="px-6 py-4 bg-violet-500 rounded-xl text-xl text-white">
-          Return to home page
+          Return to home
         </button>
       </Link>
     </main>

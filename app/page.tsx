@@ -6,17 +6,17 @@ import { ChevronDown } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center">
-      <div className="h-40 w-full bg-cyan-600 text-white flex flex-col justify-center items-center rounded-b-3xl">
+    <main className="flex flex-col grow items-center p-8">
+      <div className="h-40 w-full bg-cyan-600 text-white flex flex-col justify-center items-center rounded-3xl">
         <h2 className="text-xl">Streak &#128293;</h2>
         <div>
           <span className="text-6xl font-bold">69</span>
           <span>days</span>
         </div>
       </div>
-      <section className="w-full flex flex-col justify-start p-4 gap-y-4">
+      <section className="w-full flex flex-col justify-start mt-8 gap-y-4">
         <div className="flex flex-row justify-between">
-          <span className="font-semibold text-lg ml-2">Decks</span>
+          <span className="font-semibold text-2xl ml-2">Decks</span>
           <button className="flex flex-row justify-center items-center">
             <span className="text-stone-500">last reviewed</span>
             <ChevronDown className="w-6 h-6" />
@@ -25,11 +25,12 @@ export default function Home() {
         <ListItem
           href="/cards/zh-01"
           text="中学华文"
-          time="2days ago"
-          icon="bg-amber-200"
+          time="2d ago"
+          icon="bg-amber-400"
         />
+        <ListItem href="/" text="JLPT N1" time="1d ago" icon="bg-red-400" />
         <div className="flex justify-center">
-          <button className="p-2 border border-neutral-300 w-1/3 rounded-md mt-2">
+          <button className="p-2 border border-neutral-300 w-1/3 rounded-xl mt-2 text-neutral-700">
             Add Deck +
           </button>
         </div>

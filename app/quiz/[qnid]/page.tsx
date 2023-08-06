@@ -46,12 +46,12 @@ export default function QuizPage({ params }: { params: { qnid: string } }) {
   const [qnDone, setQnDone] = useState(false);
 
   return (
-    <section className="z-10 flex flex-col items-start">
+    <section className="z-10 flex flex-col items-start gap-8">
       <button>
         <ArrowLeft className="stroke-white w-10 h-10" />
       </button>
-      <span className="text-white text-3xl mb-6">{quizzes[0]}</span>
-      <section className=" flex flex-col justify-evenly p-6 bg-white rounded-xl shadow h-[30rem] mb-10">
+      <span className="text-white text-3xl">{quizzes[0]}</span>
+      <section className=" flex flex-col justify-evenly p-6 bg-white rounded-xl shadow h-[30rem]">
         <p id="question" className="text-lg">
           {jsonData[Number(params.qnid)].part1}
           <span
@@ -70,13 +70,13 @@ export default function QuizPage({ params }: { params: { qnid: string } }) {
                 ? `/quiz/${Number(params.qnid) + 1}`
                 : `/completed`
             }
-            className="px-6 py-4 bg-violet-500 rounded-xl text-xl text-white"
+            className="px-6 py-4 bg-violet-500 rounded-xl text-xl text-white shadow w-full text-center"
           >
             Next
           </Link>
         ) : (
           <button
-            className="px-6 py-4 bg-violet-500 rounded-xl text-xl text-white shadow"
+            className="px-6 py-4 bg-violet-500 rounded-xl text-xl text-white shadow w-full"
             onClick={(e) => {
               setAnswerShowing(true);
               setQnDone(true);

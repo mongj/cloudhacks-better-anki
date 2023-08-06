@@ -5,7 +5,7 @@ export default function DashboardLayout({
 }) {
     return (
         <main className="relative p-8">
-            <div className="w-full h-72 bg-violet-5000 rounded-b-xl absolute z-0 left-0 top-0"></div>
+            <div className="w-full h-72 bg-violet-500 rounded-b-xl absolute z-0 left-0 top-0"></div>
             <div className="z-10 relative">{children}</div>
         </main>
     );

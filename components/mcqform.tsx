@@ -1,11 +1,11 @@
 "use client";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 const radioItemStyle = "flex items-center space-x-2 p-3 border border-stone-400 h-16 rounded-xl"
-const radioItemLabelStyle= "text-lg"
+const radioItemLabelStyle = "text-lg"
 
 export default function McqForm({
   word,
@@ -16,9 +16,18 @@ export default function McqForm({
   false_options: string[];
   answerShowing: boolean;
 }) {
+  const [loading, setLoading] = useState(true);
   const [num, setNum] = useState<number>(-1);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 1000)
+  }, [])
   return (
+
     <RadioGroup className=" gap-4">
+
       <div
         className={`${radioItemStyle}`}
       >

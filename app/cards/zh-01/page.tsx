@@ -13,7 +13,7 @@ export default function Page() {
 
   function handleRateClick() {
     if (deckIndex === words.length - 1) {
-      router.push("/");
+      router.push("/completed");
       return;
     }
     setDeckIndex(deckIndex + 1);

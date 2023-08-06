@@ -24,7 +24,7 @@ export default function Page() {
         <ListItem
           href="/quiz/0"
           text="中学华文"
-          time="2d ago"
+          time="Recently Added"
           icon="bg-amber-400"
         />
         <ListItem href="/" text="JLPT N1" time="5d ago" icon="bg-red-400" />

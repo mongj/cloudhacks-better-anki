@@ -25,7 +25,7 @@ export default function Home() {
         <ListItem
           href="/cards/zh-01"
           text="中学华文"
-          time="2d ago"
+          time="Recently Added"
           icon="bg-amber-400"
         />
         <ListItem href="/" text="JLPT N1" time="1d ago" icon="bg-red-400" />

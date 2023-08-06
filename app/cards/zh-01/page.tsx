@@ -88,7 +88,9 @@ export default function Page() {
     if (words[deckIndex].hasOwnProperty("sentence")) {
       return (
         <div>
-          <p className="mb-1 text-neutral-500">🔒 Example:</p>
+          <p className="mb-1 text-neutral-500">Example:</p>
+          <div className="animate-pulse h-4"></div>
+          <div className="animate-pulse h-4"></div>
           <span>{words[deckIndex]["sentence"]}</span>
         </div>
       );

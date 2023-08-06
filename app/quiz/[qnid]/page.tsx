@@ -7,7 +7,39 @@ import McqForm from "../../../components/mcqform";
 
 import jsonData from "../../../public/data/tests.json";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+function SkeletonStack({ answerShowing, params }: any) {
+  const [showSkeleton, setShowSkeleton] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowSkeleton(false);
+    }, Math.floor(3500 + Math.random() * 2500));
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, []);
+
+  if (showSkeleton) {
+    return (
+      <div className="skeleton flex flex-col gap-4">
+        <div className="animate-pulse h-16 bg-neutral-300 rounded-sm"></div>
+        <div className="animate-pulse h-16 bg-neutral-300 rounded-sm "></div>
+        <div className="animate-pulse h-16 bg-neutral-300 rounded-sm "></div>
+        <div className="animate-pulse h-16 bg-neutral-300 rounded-sm "></div>
+      </div>
+    );
+  } else {
+    return (
+      <McqForm
+        word={jsonData[Number(params.qnid)].word}
+        false_options={jsonData[Number(params.qnid)].false_options}
+        answerShowing={answerShowing}
+      />
+    );
+  }
+}
 
 export default function QuizPage({ params }: { params: { qnid: string } }) {
   const [answerShowing, setAnswerShowing] = useState(false);
@@ -28,11 +60,7 @@ export default function QuizPage({ params }: { params: { qnid: string } }) {
           ></span>
           {jsonData[Number(params.qnid)].part2}
         </p>
-        <McqForm
-          word={jsonData[Number(params.qnid)].word}
-          false_options={jsonData[Number(params.qnid)].false_options}
-          answerShowing={answerShowing}
-        />
+        <SkeletonStack answerShowing={answerShowing} params={params} />
       </section>
       <div className="flex justify-center items-center w-full">
         {qnDone ? (

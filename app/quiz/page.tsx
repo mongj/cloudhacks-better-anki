@@ -32,4 +32,4 @@ export default function Page() {
   );
 }
 
-export const quizzes = ["中学普通华文"];
+export const quizzes = ["中学华文"];

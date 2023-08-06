@@ -75,7 +75,7 @@ function SkeletonStack({ deckIndex }: any) {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowSkeleton(false);
-    }, Math.floor(2000 + Math.random() * 4000));
+    }, Math.floor(3500 + Math.random() * 2500));
     return () => {
       clearTimeout(timeout);
     };

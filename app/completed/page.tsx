@@ -5,9 +5,12 @@ import Link from "next/link";
 export default function CompletedPage() {
   return (
     <main className="flex flex-col h-full justify-evenly items-center p-12">
-      <p className="text-3xl font-semibold text-center">
-        {"You've reached the end of this exercise!"}
-      </p>
+      <div>
+        <p className="text-xl text-center mb-2">
+          {"Congrats! You have reached the end of this exercise!"}
+        </p>
+        <p className="text-3xl font-bold text-center">{"中学华文"}</p>
+      </div>
 
       <Image src={highFive} alt="background image" />
 

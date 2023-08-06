@@ -19,7 +19,7 @@ export default function QuizPage({ params }: { params: { qnid: string } }) {
         <ArrowLeft className="stroke-white w-10 h-10" />
       </button>
       <span className="text-white text-3xl mb-6">{quizzes[0]}</span>
-      <section className=" flex flex-col justify-evenly p-6 bg-white rounded-lg shadow-md h-[30rem] mb-10">
+      <section className=" flex flex-col justify-evenly p-6 bg-white rounded-xl shadow h-[30rem] mb-10">
         <p id="question" className="text-lg">
           {jsonData[Number(params.qnid)].part1}
           <span
@@ -48,7 +48,7 @@ export default function QuizPage({ params }: { params: { qnid: string } }) {
           </Link>
         ) : (
           <button
-            className="px-6 py-4 bg-violet-500 rounded-xl text-xl text-white"
+            className="px-6 py-4 bg-violet-500 rounded-xl text-xl text-white shadow"
             onClick={(e) => {
               setAnswerShowing(true);
               setQnDone(true);

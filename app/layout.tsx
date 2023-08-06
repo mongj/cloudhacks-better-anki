@@ -1,6 +1,5 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
-import { Providers } from "./providers";
 
 // component imports
 import Navbar from "../components/ui/Navbar";
@@ -22,10 +21,10 @@ export default function RootLayout({
       <body
         className={`flex flex-col justify-between h-screen ${inter.className}`}
       >
-        <Providers>
+        <main className="flex-grow">
           {children}
-          <Navbar />
-        </Providers>
+        </main>
+        <Navbar />
       </body>
     </html>
   );

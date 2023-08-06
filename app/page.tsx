@@ -22,7 +22,7 @@ export default function Home() {
             <ChevronDown className="w-6 h-6" />
           </button>
         </div>
-        <ListItem text="中学华文" time="2days ago" icon="bg-amber-200" />
+        <ListItem text="中学华文" time="2 days ago" icon="bg-amber-200" />
         <div className="flex justify-center">
           <button className="p-2 border-2 w-1/3 rounded-sm">Add Deck +</button>
         </div>

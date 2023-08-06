@@ -3,6 +3,8 @@ import ListItem from "../../components/ui/ListItem";
 
 import expandIcon from '../../public/svg/expand_more_FILL0_wght400_GRAD0_opsz48 (2).svg'
 
+
+
 export default function Page() {
   return (
     <main className="flex flex-col items-center">
@@ -28,3 +30,6 @@ export default function Page() {
     </main>
   );
 }
+
+
+export const quizzes = ["中学普通华文"]

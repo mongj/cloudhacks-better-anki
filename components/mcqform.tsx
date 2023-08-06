@@ -29,17 +29,17 @@ export default function McqForm({
     <RadioGroup className=" gap-4">
 
       <div
-        className={`${radioItemStyle}`}
+        className={`${radioItemStyle} ${num===1 && answerShowing ? "bg-red-300":""}`}
       >
         <RadioGroupItem
           value={false_options[0]}
           id={false_options[0]}
           onClick={() => setNum(1)}
         />
-        <Label className={radioItemLabelStyle} htmlFor={false_options[0]}>{false_options[0]}</Label>
+        <Label className={`${radioItemLabelStyle} `} htmlFor={false_options[0]}>{false_options[0]}</Label>
       </div>
       <div
-        className={`${radioItemStyle}`}
+        className={`${radioItemStyle} ${num===2 && answerShowing ? "bg-red-300":""}`}
       >
         <RadioGroupItem
           value={false_options[1]}
@@ -55,7 +55,7 @@ export default function McqForm({
         <Label className={radioItemLabelStyle} htmlFor={word}>{word}</Label>
       </div>
       <div
-        className={`${radioItemStyle}`}
+        className={`${radioItemStyle} ${num===4 && answerShowing ? "bg-red-300":""}`}
       >
         <RadioGroupItem
           value={false_options[2]}

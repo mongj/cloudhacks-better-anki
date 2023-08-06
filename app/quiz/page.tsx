@@ -9,7 +9,7 @@ export default function Page() {
       <div className="h-40 w-full bg-violet-500 text-white flex flex-col justify-center items-center rounded-3xl">
         <h2 className="text-xl">Streak &#128293;</h2>
         <div>
-          <span className="text-6xl font-bold">2</span>
+          <span className="text-6xl font-bold">420</span>
           <span>days</span>
         </div>
       </div>

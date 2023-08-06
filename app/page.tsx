@@ -7,7 +7,7 @@ import { ChevronDown } from "lucide-react";
 export default function Home() {
   return (
     <main className="flex flex-col items-center">
-      <div className="h-40 w-full bg-cyan-600 text-white flex flex-col justify-center items-center">
+      <div className="h-40 w-full bg-cyan-600 text-white flex flex-col justify-center items-center rounded-b-3xl">
         <h2 className="text-xl">Streak &#128293;</h2>
         <div>
           <span className="text-6xl font-bold">69</span>
@@ -22,9 +22,16 @@ export default function Home() {
             <ChevronDown className="w-6 h-6" />
           </button>
         </div>
-        <ListItem href="/cards/zh-01" text="中学华文" time="2days ago" icon="bg-amber-200" />
+        <ListItem
+          href="/cards/zh-01"
+          text="中学华文"
+          time="2days ago"
+          icon="bg-amber-200"
+        />
         <div className="flex justify-center">
-          <button className="p-2 border-2 w-1/3 rounded-sm">Add Deck +</button>
+          <button className="p-2 border border-neutral-300 w-1/3 rounded-md mt-2">
+            Add Deck +
+          </button>
         </div>
       </section>
     </main>

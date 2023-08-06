@@ -75,7 +75,7 @@ function SkeletonStack({ deckIndex }: any) {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowSkeleton(false);
-    }, Math.floor(2000 + Math.random() * 4000));
+    }, Math.floor(3500 + Math.random() * 2500));
     return () => {
       clearTimeout(timeout);
     };
@@ -147,8 +147,8 @@ export default function Page() {
         <div className="flex flex-col gap-8 absolute top-0 left-0 p-12 w-full h-full">
           <ArrowLeft color="white" size={48} />
           <div>
-            <p className="text-xl text-neutral-200">中学普通华文</p>
-            <h1 className="text-3xl text-white">Words seen: {deckIndex}</h1>
+            <h1 className="text-3xl text-white">中学华文</h1>
+            <p className="text-xl text-neutral-200">Words seen: {deckIndex}</p>
           </div>
           <div className="flex flex-grow relative">
             <div className="card-front flex flex-col bg-white flex-grow h-full w-full rounded-2xl shadow place-content-center absolute top-0 left-0 visible">

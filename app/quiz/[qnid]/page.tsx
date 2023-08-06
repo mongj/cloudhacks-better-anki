@@ -15,7 +15,7 @@ function SkeletonStack({ answerShowing, params }: any) {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowSkeleton(false);
-    }, Math.floor(3500 + Math.random() * 2500));
+    }, Math.floor(3500 + Math.random() * 3500));
     return () => {
       clearTimeout(timeout);
     };

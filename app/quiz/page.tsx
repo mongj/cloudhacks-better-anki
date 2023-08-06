@@ -6,7 +6,7 @@ import expandIcon from "../../public/svg/expand_more_FILL0_wght400_GRAD0_opsz48 
 export default function Page() {
   return (
     <main className="flex flex-col items-center">
-      <div className="h-40 w-full bg-violet-500 text-white flex flex-col justify-center items-center">
+      <div className="h-40 w-full bg-violet-500 text-white flex flex-col justify-center items-center rounded-b-3xl">
         <h2 className="text-xl">Streak &#128293;</h2>
         <div>
           <span className="text-6xl font-bold">420</span>

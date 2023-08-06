@@ -21,9 +21,7 @@ export default function RootLayout({
       <body
         className={`flex flex-col justify-between h-screen ${inter.className}`}
       >
-        <main className="flex-grow">
-          {children}
-        </main>
+        <main className="flex-grow bg-neutral-50">{children}</main>
         <Navbar />
       </body>
     </html>

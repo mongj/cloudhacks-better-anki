@@ -66,7 +66,7 @@ const words = [
     "word-en": "mysterious",
     pronunciation: "shén mì",
     sentence: "他喜欢阅读关于宇宙的书籍，以此来探索那个神秘的世界",
-  },
+  }
 ];
 
 function SkeletonStack({ deckIndex }: any) {

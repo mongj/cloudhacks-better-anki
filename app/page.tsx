@@ -23,7 +23,7 @@ export default function Home() {
             <ChevronDown className="w-6 h-6" />
           </button>
         </div>
-        <ListItem text="中学华文" time="2days ago" icon="bg-amber-200" />
+        <ListItem href="/cards/zh-01" text="中学华文" time="2days ago" icon="bg-amber-200" />
       </section>
 
     </main>

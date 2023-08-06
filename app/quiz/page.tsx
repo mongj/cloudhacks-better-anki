@@ -24,7 +24,7 @@ export default function Page() {
             <Image className="h-6 w-6" src={expandIcon} alt="expand" />
           </button>
         </div>
-        <ListItem text="中学华文" time="2days ago" icon="bg-amber-200" />
+        <ListItem href="/quiz/01" text="中学华文" time="2days ago" icon="bg-amber-200" />
       </section>
 
     </main>
